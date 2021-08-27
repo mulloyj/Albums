@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Album from './Album';
 
 class Current extends Component {
     state = { 
@@ -9,12 +10,7 @@ class Current extends Component {
 
     render() { 
         return ( 
-            <div className="current-album">
-                <h1 className="album-title">{this.state.albums[0].title}</h1>
-                <h2>{this.state.albums[0].artist}</h2>
-                <img src={this.state.albums[0].imageURL} alt="album cover"/>
-                <a href={this.state.albums[0].spotify}></a>
-            </div>
+            <Album album={this.state.albums[0]}/>
          );
     }
 }

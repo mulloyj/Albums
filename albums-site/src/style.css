@@ -32,7 +32,7 @@
   background-color: #04aa6d;
 }
 
-.current-album {
+.album-info {
   margin: auto;
   width: 50%;
   text-align: center;
@@ -40,4 +40,21 @@
 
 .album-title {
   padding-top: 2rem;
+}
+
+.album-info a {
+  margin: auto;
+  display: block;
+}
+
+.spotify-icon {
+  display: inline-block;
+  overflow: hidden;
+  width: 30px;
+  height: auto;
+  position: relative;
+}
+
+.album-info h1 {
+  font-family: sans-serif;
 }

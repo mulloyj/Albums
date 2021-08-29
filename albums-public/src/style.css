@@ -1,0 +1,61 @@
+.navigation {
+  position: sticky;
+  top: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navigation li {
+  float: left;
+}
+
+.navigation li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navigation li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+
+.about {
+  background-color: #04aa6d;
+}
+
+.album-info {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.album-title {
+  padding-top: 2rem;
+}
+
+.album-info a {
+  padding-top: 10px;
+  margin: auto;
+  display: block;
+}
+
+.spotify-icon {
+  display: inline-block;
+  overflow: hidden;
+  width: 30px;
+  height: auto;
+  position: relative;
+}
+
+.album-info h1 {
+  font-family: sans-serif;
+}

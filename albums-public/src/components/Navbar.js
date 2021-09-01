@@ -18,6 +18,9 @@ class Navbar extends Component {
             case '/albums/add/':
                 this.setState({AddClass: 'active'});
                 break;
+            case '/albums/spotify':
+                this.setState({AddClass: 'active'});
+                break;
             case '/albums/current/':
                 this.setState({CurrentClass: 'active'});
                 break;

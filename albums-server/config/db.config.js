@@ -1,3 +1,3 @@
 module.exports = {
-    url: "mongodb://localhost:27017/albums_db"
+    url: "mongodb+srv://josh:EInaN86XsbCkyXRz@albums.vwc4p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 };

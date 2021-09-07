@@ -17,7 +17,8 @@ exports.create = (req, res) => {
         imageUrl: req.body.imageUrl,
         listenedTo: req.body.listenedTo ? req.body.listenedTo : false,
         dateListened: null,
-        current: false,
+        current: req.body.current,
+        slug: req.body.slug
     });
 
     // Save Album in the database
@@ -38,7 +39,7 @@ exports.create = (req, res) => {
 // Retrieve all Albums from the database
 exports.findAll = (req, res) => {
     const slug = req.query.slug;
-    var condition = slug ? { slug: { $regex: new RegExp(slug), $options: "i"} } : {};
+    var condition = slug ? { slug: { $regex: new RegExp(slug), $options: "i" } } : {};
 
     Album.find(condition)
         .then(data => {
@@ -47,7 +48,7 @@ exports.findAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                err.message || "Some error occured while retrieving the Albums."
+                    err.message || "Some error occured while retrieving the Albums."
             });
         });
 };
@@ -59,13 +60,13 @@ exports.findOne = (req, res) => {
     Album.findById(id)
         .then(data => {
             if (!data)
-                res.status(404).send({ message: "Not found Album with id " + id});
+                res.status(404).send({ message: "Not found Album with id " + id });
             else res.send(data);
         })
         .catch(err => {
             res
                 .status(500)
-                .send({ message: "Error retrieving Album with id " + id});
+                .send({ message: "Error retrieving Album with id " + id });
         });
 };
 
@@ -79,9 +80,9 @@ exports.update = (req, res) => {
 
     const id = req.params.id;
 
-    Album.findByIdAndUpdate(id, req.body, { useFindAndModify: false})
+    Album.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
-            if(!data) {
+            if (!data) {
                 res.status(404).send({
                     message: `Cannt update Album with id ${id}. Maybe Album was not found!`
                 });
@@ -135,7 +136,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all listened to Albums
 exports.findAllListenedTo = (req, res) => {
-    Album.find({ listenedTo: true})
+    Album.find({ listenedTo: true })
         .then(data => {
             res.send(data);
         })

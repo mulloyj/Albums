@@ -4,7 +4,7 @@ import AlbumDataService from '../services/album.service';
 class AlbumList extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             albums: [],
         }
     }
@@ -22,9 +22,9 @@ class AlbumList extends Component {
     }
 
     render() {
-        const {albums} = this.state
+        const { albums } = this.state
 
-        return ( 
+        return (
             <ul className="list-group">
                 {albums && albums.map((album) => (
                     <li className={"list-group-item"} key={album.id}>
@@ -35,5 +35,5 @@ class AlbumList extends Component {
         );
     }
 }
- 
+
 export default AlbumList;

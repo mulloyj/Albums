@@ -18,12 +18,12 @@ export default class SpotifyRedirect extends Component {
             setExpiryTime(expiryTime);
             this.props.history.push('/albums/add/spotify/');
         } catch (error) {
+            console.log(error);
             this.props.history.push('/albums/add/');
         }
     }
 
     render() {
-        console.log('redirect page');
-        return null;
+        return <div>Test</div>;
     }
 }

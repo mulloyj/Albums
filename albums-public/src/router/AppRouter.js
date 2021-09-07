@@ -48,20 +48,14 @@ export default class AppRouter extends Component {
                 <Router>
                     <Switch>
                         <Route 
-                            path="/albums/add/spotify/redirect"
-                            render={(props) => {
-                                console.log('redirect');
-                                <SpotifyRedirect 
-                                    isValidSession={this.isValidSession}
-                                    setExpiryTime={this.setExpiryTime}
-                                    {...props}/>
-                            }}/>
+                            path="/albums/add/spotify/redirect/"
+                            component={(props) => <SpotifyRedirect setExpiryTime={this.setExpiryTime} {...props}/>}
+                            />
                         <Route path="/albums/add/spotify/"
-                            render={(props) => {
-                                <SpotifyAdd 
-                                    isValidSession={this.isValidSession}
-                                    {...this.props}/>
-                            }}/>
+                            component={(props) => <SpotifyAdd 
+                                                    isValidSession={this.isValidSession}
+                                                    {...this.props}/> }
+                            />
                         <Route path="/albums/add/">
                             <AddAlbum />
                         </Route>
